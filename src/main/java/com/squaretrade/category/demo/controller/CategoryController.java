@@ -22,4 +22,11 @@ public class CategoryController {
         List<String> keywords = categoryService.getKeywordForCategory(keywordId);
         return ResponseEntity.ok(keywords);
     }
+
+    @GetMapping("/level/{levelId}")
+    public ResponseEntity<String> getCategoryLevel(@PathVariable Long levelId){
+        int level = categoryService.getCategoryLevel(levelId);
+        String messaje = "El nivel es "+level;
+        return ResponseEntity.ok(messaje);
+    }
 }
