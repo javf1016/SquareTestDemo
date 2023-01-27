@@ -10,9 +10,8 @@ import java.util.List;
 @Service
 public class CategoryService {
 
+    @Autowired
     private CategoryRepository categoryRepository;
-
-    private CategoryKeyword categoryKeyword;
 
     public List<String> getKeywordForCategory(Long categoryId){
         List<String> keywords = categoryRepository.findCategoryKeywordsByCategoryId(categoryId);
